@@ -1,3 +1,5 @@
+run/
+esd_local.conf
 blib/
 .build/
 _build/
