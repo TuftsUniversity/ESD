@@ -1,0 +1,38 @@
+[%# This form allows a user to start filling out metadata.
+    First, the user selects the group with which she is
+    associated.
+%]
+
+[% page_title = 'Submit Your Fletcher Thesis' %]
+
+<h1>[% page_title %]</h1>
+
+<p><strong>Name:</strong> [% name %]</p>
+
+[% form %]
+
+<p>Technical questions? <a
+target="_blank" href="http://dca.tufts.edu/contact/">Contact DCA</a>.  Other
+questions? <a target="_blank"
+href="http://www.library.tufts.edu/ginn/forms/forms.aspx?form=department&department=Reference">Contact Ginn
+Library</a>.</p>
+
+<script type="text/javascript">
+
+var upload_field_counter = 1;
+
+function add_upload_field() {
+
+    // Create a new upload field, and add it to the form.
+    var new_field = document.createElement( 'div' );
+
+    new_field.innerHTML = '<div class="file label">'
+                          + '<label>File: </label>'
+                          + '<input type="file" name="file"/>'
+                          + '</div>'
+    
+    var file_upload_div = document.getElementById( 'file_upload_div' );
+    file_upload_div.appendChild( new_field );
+
+}
+</script>

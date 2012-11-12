@@ -1,0 +1,68 @@
+method: post
+
+elements:
+
+      - type: Select
+        name: department
+        id: department
+        label: 'Degree'
+        options:
+          - [ 'FL001.002', 'MALD' ]
+          - [ 'FL001.001', 'LLM' ]
+          - [ 'FL001.003', 'MIB' ]
+
+      - type: Textarea
+        name: title
+        label: 'Thesis title (200 characters max)'
+        rows: 1
+        constraints:
+          - type: Length
+            max: 200
+            min: 1
+          - Required
+
+      - type: Textarea
+        name: abstract
+        label: 'Abstract (3000 characters max)'
+        rows: 8
+        constraints:
+          - type: Length
+            max: 3000
+            min: 1
+          - Required
+
+      - type: Block
+        name: div
+        id: file_upload_div
+        elements:
+        - type: Repeatable
+          increment_field_names: 0
+          name: thesis
+          elements:
+            - type: File
+              name: file
+              label: 'File: '
+              constraints:
+                - Required
+                - type: File::Size
+                  max_megabyte: 50
+
+      - type: Block
+        tag: p
+        content_xml: '<input type="button" value="Add another file" id="adder_button" onclick="add_upload_field()" />'
+              
+      - type: Checkbox
+        name: multimedia
+        label: Check if the thesis files contain multimedia elements such as embedded audio or video
+        default: 0
+
+      - type: Checkbox
+        name: license
+        label_xml: 'In order to deposit your thesis, you must agree to abide by the terms of the <a target="_blank" href="/submissions/deposit_submission/fletcher_license">Non-Exclusive Deposit License (fletcher1.0)</a>.  Check this box to indicate that you agree to the terms.'
+        default: 0
+        constraints:
+          - Required
+
+      - type: Submit
+        name: submit_button
+        value: Done

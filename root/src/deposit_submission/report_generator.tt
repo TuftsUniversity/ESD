@@ -1,0 +1,9 @@
+[%# to Generate reports
+%]
+
+[% page_title = 'generate CSV reports' %]
+
+<p><strong>press the button to generate reports:</strong> </p>
+
+[% form %]
+

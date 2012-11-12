@@ -1,0 +1,10 @@
+<div id="login_info">
+[% IF Catalyst.user %]
+<p>Welcome, [% Catalyst.user.id %].</p>
+<form method="post" action="[% Catalyst.uri_for ( '/auth/logout' ) %]">
+<input type="submit" value="Log out of the dropbox" />
+</form>
+[% ELSE %]
+<p>You are not signed in.</p>
+[% END %]
+</div>

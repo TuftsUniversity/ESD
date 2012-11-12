@@ -1,0 +1,9 @@
+Run script/esd_server.pl to test the application.
+
+ESD-- Electronic Submission Dropbox
+
+
+The dropbox accepts uploaded scholarship from students from approved
+programs and faculty. It collects metadata according to standards set by
+the department or the archives, as appropriate, and sends confirmation to
+the archives and to the depositor.

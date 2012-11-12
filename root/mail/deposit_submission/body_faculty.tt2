@@ -1,0 +1,19 @@
+Dear Tufts DCA Staff,
+
+A new faculty paper has been submitted:
+
+This paper's attachments can be found at this path on
+moby.lib.tufts.edu:
+[% dir %]
+
+File(s): [% uploaded %]
+
+Creator: [% name %]
+UTLN: [% username %]
+Department: [% department %] [% otherdept %]
+Multimedia present? [% multimedia %]
+
+Citation and abstract: [% citation %]
+
+Sincerely,
+The dropbox ([% Catalyst.uri_for( '/' ) %])

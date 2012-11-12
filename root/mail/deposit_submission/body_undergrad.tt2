@@ -1,0 +1,22 @@
+Dear Tufts DCA Staff,
+
+A new undergraduate thesis has been submitted:
+
+This thesis attachments can be found at this path on
+moby.lib.tufts.edu:
+[% dir %]
+
+File(s): [% uploaded %]
+
+Creator: [% name %]
+UTLN: [% username %]
+Department: [% department %] [% otherdept %]
+Title: [% title %]
+Multimedia present? [% multimedia %]
+
+Abstract:
+
+[% abstract %]
+
+Sincerely,
+The dropbox ([% Catalyst.uri_for( '/' ) %])

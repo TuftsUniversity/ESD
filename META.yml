@@ -1,0 +1,58 @@
+---
+abstract: 'Catalyst-based ESD support application'
+author:
+  - 'Deborah Kaplan'
+build_requires:
+  ExtUtils::MakeMaker: 6.42
+configure_requires:
+  ExtUtils::MakeMaker: 6.42
+distribution_type: module
+generated_by: 'Module::Install version 0.91'
+license: unknown
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4
+name: ESD
+no_index:
+  directory:
+    - inc
+    - t
+requires:
+  Carp: 0
+  Catalyst::Action::RenderView: 0
+  Catalyst::Authentication::Store::LDAP: 0
+  Catalyst::Controller::HTML::FormFu: 0.06000
+  Catalyst::Model::DBIC::Schema: 0
+  Catalyst::Plugin::Authentication: 0
+  Catalyst::Plugin::Authorization::Roles: 0
+  Catalyst::Plugin::Cache: 0
+  Catalyst::Plugin::Cache::Store::Memory: 0
+  Catalyst::Plugin::ConfigLoader: 0
+  Catalyst::Plugin::DateTime: 0
+  Catalyst::Plugin::Email: 0
+  Catalyst::Plugin::Session: 0
+  Catalyst::Plugin::Session::State::Cookie: 0
+  Catalyst::Plugin::Session::Store::File: 0
+  Catalyst::Plugin::Static::Simple: 0
+  Catalyst::Runtime: 5.7014
+  Config::Any: 0.18
+  Config::General: 0
+  DBD::mysql: 0
+  DBI: 0
+  DBIx::Class::Schema: 0
+  DateTime::Format::MySQL: 0
+  File::Copy: 0
+  File::Grep: 0
+  File::Path: 0
+  HTML::FormFu: 0.06000
+  IO::Socket::SSL: 0
+  Moose: 0
+  Moose::Util::TypeConstraints: 0
+  Readonly: 0
+  SQL::Translator: 0
+  Scalar::Util: 0
+  Test::Pod: 0
+  Test::Pod::Coverage: 0
+  XML::LibXML: 0
+  parent: 0
+version: 0.01

@@ -1,0 +1,19 @@
+Dear Tufts DCA Staff,
+
+A new Fletcher thesis has been submitted from the department [% department %]:
+
+This paper's attachments can be found at this path on
+moby.lib.tufts.edu:
+[% dir %]
+
+File(s): [% uploaded %]
+
+Creator: [% name %]
+Title: [% title %]
+UTLN: [% username %]
+Multimedia present? [% multimedia %]
+
+Abstract: [% abstract %]
+
+Sincerely,
+The dropbox ([% Catalyst.uri_for( '/' ) %])

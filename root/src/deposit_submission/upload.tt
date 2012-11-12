@@ -1,0 +1,31 @@
+[%# This form allows a user to start filling out metadata.
+    First, the user selects the group with which she is
+    associated.
+%]
+
+[% page_title = 'Submit a paper' %]
+
+[% IF thesis_complete %]
+<div class="alert_box">
+<p>You have completed this submission of your scholarship! Thank you. DCA staff has been notified of the submission.</p>
+<p>If you wish to submit new work, you may begin the process anew below.</p>
+<p>If you have any questions, <a
+href="http://dca.tufts.edu/contact/">Contact DCA</a>. </p> 
+</div>
+[% END %]
+<p>&nbsp;</p>
+[% form %]
+<p>This service is available for:
+
+<ul>
+ <li>Undergraduate honors theses</li>
+ <li>Faculty scholarship</li>
+ <li>Fletcher School theses</li>
+ <li>Graduate School of Arts and Science Education Qualifying
+ Papers</li>
+</ul>
+
+</p>
+
+
+</form>

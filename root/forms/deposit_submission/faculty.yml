@@ -1,0 +1,147 @@
+method: post
+        
+attributes_xml:
+          name: 'describe_paper'
+
+elements:
+
+      - type: Select
+        name: department
+        id: department
+        label: 'Department'
+        attributes_xml:
+                  onchange: "checkForOther()"
+        options:
+          - [ 'UA005.018', 'Africa and The New World' ]
+          - [ 'UA005.010', 'Dept. of Biology' ]
+          - [ 'UA005.019', 'Dept. of Biomedical Engineering' ]
+          - [ 'UA005.009', 'Dept. of Child Development' ]
+          - [ 'UA005.040', 'Dept. of Civil Engineering' ]
+          - [ 'UA005.025', 'Dept. of Classics' ]
+          - [ 'UA005.036', 'Dept. of Computer Science' ]
+          - [ 'UA005.026', 'Dept. of Drama and Dance' ]
+          - [ 'UA005.003', 'Dept. of Economics' ]
+          - [ 'UA005.035', 'Dept. of Electrical and Computer Engineering' ]
+          - [ 'UA005.005', 'Dept. of English' ]
+          - [ 'UA005.038', 'Dept. of Geology' ]
+          - [ 'UA005.001', 'Dept. of History' ]
+          - [ 'UA005.033', 'Dept. of International Letters and Visual Studies' ]
+          - [ 'UA005.032', 'Dept. of Mathematics' ]
+          - [ 'UA005.028', 'Dept. of Mechanical Engineering' ]
+          - [ 'UA005.034', 'Dept. of Music' ]
+          - [ 'UA005.002', 'Dept. of Philosophy' ]
+          - [ 'UA005.022', 'Dept. of Physics' ]
+          - [ 'UA005.007', 'Dept. of Political Science' ]
+          - [ 'UA005.006', 'Dept. of Psychology' ]
+          - [ 'UA005.024', 'Dept. of Religion' ]
+          - [ 'UA005.020', 'Dept. of Romance Languages' ]
+          - [ 'UA005.011', 'Dept. of Sociology/Anthropology' ]
+          - [ 'UA005.012', 'Dept. of Chemical and Bio Engineering' ]
+          - [ 'UA005.013', 'Dept. of Art and Art History' ]
+          - [ 'UA005.014', 'Dept. of German,  Russian,  and Asian Languages and Literature' ]
+          - [ 'UA005.015', 'Dept. of Chemistry' ]
+          - [ 'PB002.001',  'Perseus Project' ]
+          - [ 'UA005.008', 'Program in American Studies' ]
+          - [ 'UA005.030', 'Program in Archaeology' ]
+          - [ 'UA005.017', 'Program in Asian Studies' ]
+          - [ 'UA005.031', 'Program in Community Health' ]
+          - [ 'UA005.029', 'Program in Engineering Psychology' ]
+          - [ 'UA005.004', 'Program in International Relations' ]
+          - [ 'UA005.023', 'Program in Judaic Studies' ]
+          - [ 'UA005.039', 'Program in Peace and Justice Studies' ]
+          - [ 'UA005.027', "Program in Women's studies" ]
+          - [ 'other', 'Other' ]
+
+      - type: Block
+        name: div
+        id: otherdept
+        elements:
+        - type: Textarea
+          name: otherdept
+          label: 'Department, if not on the list above'
+          rows: 1
+          constraints:
+            - type: Length
+              max: 200
+
+      - type: Textarea
+        name: citation
+        label: 'Citations and Abstracts'
+        rows: 10
+        constraints:
+          - type: Length
+            max: 10000
+            min: 1
+          - Required
+
+      - type: Block
+        tag: p
+        attributes_xml:
+                  class: leading_horizontal
+        content: 'Is every author on the paper a Tufts affiliate?'
+
+      - type: Block
+        name: div
+        elements:
+        - type: Radio
+          attributes_xml:
+                    onchange: "multiTuftsAuthors()"
+          name: affiliate
+          label: 'Yes'
+          value: 'yes'
+        - type: Radio
+          attributes_xml:
+                    onchange: "multiTuftsAuthors()"
+          name: affiliate
+          label: 'No'
+          value: 'no'
+
+      - type: Block
+        name: div
+        id: otherauthor
+        elements:
+        - type: Textarea
+          name: otherauthor
+          label: 'Please supply the names of all the authors of this paper who are Tufts affiliated.'
+          rows: 5
+          constraints:
+            - type: Length
+              max: 300
+
+      - type: Block
+        name: div
+        id: file_upload_div
+        elements:
+        - type: Repeatable
+          increment_field_names: 0
+          name: paper
+          elements:
+            - type: File
+              name: file
+              label: 'File: (must be PDF)'
+              constraints:
+                - Required
+                - type: File::Size
+                  max_megabyte: 50
+                - type: File::MIME
+                  regex: 'application/(x-)?(download|pdf)'
+
+      - type: Block
+        tag: p
+        content_xml: '<input type="button" value="Add more files" id="adder_button" onclick="add_upload_field()" />'
+              
+      - type: Checkbox
+        name: multimedia
+        label: Check if the files contain multimedia elements such as embedded audio or video
+        default: 0
+
+      - type: Checkbox
+        name: license
+        label_xml: 'In order to deposit your work, you must agree to abide by the terms of the <a href="/submissions/deposit_submission/faculty_license">Non-Exclusive Deposit License (fac1.0)</a>.  Check this box to indicate that you agree to the terms.'
+        default: 0
+        constraints:
+          - Required
+
+      - type: Submit
+        name: submit_button
+        value: Done

@@ -1,0 +1,17 @@
+method: post
+
+elements:
+
+      - type: Select
+        name: user_type
+        options:
+          - [ 'faculty', 'Faculty Scholarship' ]
+          - [ 'fletcher', 'Fletcher School thesis' ]
+          - [ 'ed_qp', ' Graduate School of Arts and Sciences Education Qualifying Paper' ]
+          - [ 'undergrad', 'Undergraduate honors thesis' ]
+        constraints:
+          - type: Required
+
+      - type: Submit
+        value: Next
+        

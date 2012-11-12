@@ -1,0 +1,74 @@
+[%# This form allows a user to start filling out metadata.
+    First, the user selects the group with which she is
+    associated.
+%]
+
+[% page_title = 'Describe your submission' %]
+
+<p><strong>Name:</strong> [% name %]</p>
+
+[% form %]
+
+<script type="text/javascript">
+
+     // FIXME: Add WAI-ARIA to these!
+
+     //
+     // If there are non-Tufts authors, show the box allowing the
+     // depositor to identify the Tufts-affialiated authors for
+     // explicit author linking.
+     //
+     function multiTuftsAuthors () {
+
+         var is_affiliate = 0;
+
+         for( i = 0; i < document.describe_paper.affiliate.length; i++ ) {
+             if( document.describe_paper.affiliate[i].checked == true )
+             is_affiliate = document.describe_paper.affiliate[i].value;
+         }
+    
+         if ( is_affiliate == "no" ) {
+             document.getElementById("otherauthor").style.display = "inline";
+         } else {
+             document.getElementById("otherauthor").style.display = "none";
+         }
+     }
+
+     //
+     // If department is "Other", show the box allowing user to
+     // specify department
+     //
+     function checkForOther () {
+
+         var selectedItem = document.getElementById("department")
+         var department = selectedItem.options[selectedItem.selectedIndex];
+         if ( department.value == "other" ) {
+             document.getElementById("otherdept").style.display = "inline";
+         } else {
+             document.getElementById("otherdept").style.display = "none";
+         }
+
+     }
+
+</script>
+
+
+<script type="text/javascript">
+
+var upload_field_counter = 1;
+
+function add_upload_field() {
+
+    // Create a new upload field, and add it to the form.
+    var new_field = document.createElement( 'div' );
+
+    new_field.innerHTML = '<div class="file label">'
+                          + '<label>File: </label>'
+                          + '<input type="file" name="file"/>'
+                          + '</div>'
+    
+    var file_upload_div = document.getElementById( 'file_upload_div' );
+    file_upload_div.appendChild( new_field );
+
+}
+</script>
