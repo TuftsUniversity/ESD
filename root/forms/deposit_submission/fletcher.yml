@@ -13,7 +13,7 @@ elements:
 
       - type: Textarea
         name: title
-        label: 'Thesis title (200 characters max)'
+        label: 'Capstone project title (200 characters max)'
         rows: 1
         constraints:
           - type: Length
@@ -53,12 +53,12 @@ elements:
               
       - type: Checkbox
         name: multimedia
-        label: Check if the thesis files contain multimedia elements such as embedded audio or video
+        label: Check if the capstone files contain multimedia elements such as embedded audio or video
         default: 0
 
       - type: Checkbox
         name: license
-        label_xml: 'In order to deposit your thesis, you must agree to abide by the terms of the <a target="_blank" href="/submissions/deposit_submission/fletcher_license">Non-Exclusive Deposit License (fletcher1.0)</a>.  Check this box to indicate that you agree to the terms.'
+        label_xml: 'In order to deposit your capstone project, you must agree to abide by the terms of the <a target="_blank" href="/submissions/deposit_submission/fletcher_license">Non-Exclusive Deposit License (fletcher1.0)</a>.  Check this box to indicate that you agree to the terms.'
         default: 0
         constraints:
           - Required

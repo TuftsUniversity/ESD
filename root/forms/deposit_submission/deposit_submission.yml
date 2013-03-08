@@ -6,7 +6,7 @@ elements:
         name: user_type
         options:
           - [ 'faculty', 'Faculty Scholarship' ]
-          - [ 'fletcher', 'Fletcher School thesis' ]
+          - [ 'fletcher', 'Fletcher School capstone project' ]
           - [ 'ed_qp', ' Graduate School of Arts and Sciences Education Qualifying Paper' ]
           - [ 'undergrad', 'Undergraduate honors thesis' ]
         constraints:

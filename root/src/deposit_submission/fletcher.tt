@@ -3,7 +3,7 @@
     associated.
 %]
 
-[% page_title = 'Submit Your Fletcher Thesis' %]
+[% page_title = 'Submit Your Fletcher Capstone Project' %]
 
 <h1>[% page_title %]</h1>
 
